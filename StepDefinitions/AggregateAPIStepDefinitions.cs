@@ -25,7 +25,7 @@ namespace GWAPI.StepDefinitions
         public AggregateAPIStepDefinitions(Hooks hooks, ITestOutputHelper output)
         {
             var configuration = hooks.BeforeScenario();
-            this.BaseURI = configuration.synergyBaseUrl;
+            this.BaseURI = configuration.Url;
             this.client = new RestClient(BaseURI);
             this.Console = output;
         }
