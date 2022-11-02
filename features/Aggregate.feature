@@ -1,5 +1,5 @@
 ﻿@tag
-Feature: Aggregate API
+Feature:  API
 HC API Test 
 
 @SmokeTest 
