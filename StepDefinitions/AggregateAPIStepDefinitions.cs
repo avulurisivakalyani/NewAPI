@@ -62,7 +62,7 @@ namespace GWAPI.StepDefinitions
             int responseStatusCode = (int)response.StatusCode;
             if (response.IsSuccessful)
             {
-                var user = JsonConvert.DeserializeObject<AggregateHC>(response.Content);
+               // var user = JsonConvert.DeserializeObject<AggregateHC>(response.Content);
 
                 Assert.Equal(responseStatusCode.ToString(), statusCode);
                 HttpStatusCode StatusCode = response.StatusCode;
