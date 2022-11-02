@@ -32,7 +32,7 @@ namespace GWAPI.Configuration
              .AddJsonFile(configFile, optional: false, reloadOnChange: true)
               .Build();
             }
-            public string synergyBaseUrl => _configuration["synergyBaseUrl"];
+            public string Url => _configuration["Url"];
         public string user => _configuration["user"];
         public string apiversion => _configuration["api-version"];
       
