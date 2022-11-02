@@ -1,10 +1,10 @@
 ﻿@tag
-Feature: Aggregate API
+Feature:  API
 
-Aggregate HC API Test 
+ HC API Test 
 
 @SmokeTest 
-Scenario:Aggregate API
+Scenario: API
     Given I set endpoint as 'api/health'
    When I set method  GET
    Then I set Get Header param request content type Get 
