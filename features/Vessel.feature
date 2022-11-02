@@ -2,15 +2,15 @@
 Vessel  HC,GET,POST
 @test
 Scenario: HC  API
-Given I set GET endpoint 'api/vessels/health-check'
+Given I set GET endpoint 'api/v/-check'
 When I set HC method 
 Then I set  headers
       | Key	| Value| 
       | Content-Type | application/json |        
 Then I shouldreceive valid response code as'200' 
 @test
- Scenario:POST Vessel-search "379"search=true 
-Given I set Post endpoint 'api/vessels'
+ Scenario:POST search=true 
+Given I set Post endpoint 'api/checkapi'
 When I set VesselSearch POST method
 Then I set headers to Post 
   | Key	| Value| 
