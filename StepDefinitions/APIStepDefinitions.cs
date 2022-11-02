@@ -5,14 +5,14 @@ using TechTalk.SpecFlow;
 using Newtonsoft.Json;
 using Xunit;
 using System.Net;
-using GWAPI.Models;
+
 using Xunit.Abstractions;
 using GWAPI.Hook;
 
 namespace GWAPI.StepDefinitions
 {
     [Binding]
-    public class AggregateAPIStepDefinitions
+    public class APIStepDefinitions
     {
         private readonly RestClient client;
         private string endPoint;
@@ -22,10 +22,10 @@ namespace GWAPI.StepDefinitions
         private string ResponseBody;
         private readonly ITestOutputHelper Console;
         public string BaseURI;
-        public AggregateAPIStepDefinitions(Hooks hooks, ITestOutputHelper output)
+        public APIStepDefinitions(Hooks hooks, ITestOutputHelper output)
         {
             var configuration = hooks.BeforeScenario();
-            this.BaseURI = configuration.synergyBaseUrl;
+            this.BaseURI = configuration.Url;
             this.client = new RestClient(BaseURI);
             this.Console = output;
         }
@@ -62,7 +62,7 @@ namespace GWAPI.StepDefinitions
             int responseStatusCode = (int)response.StatusCode;
             if (response.IsSuccessful)
             {
-                var user = JsonConvert.DeserializeObject<AggregateHC>(response.Content);
+                //var user = JsonConvert.DeserializeObject<AggregateHC>(response.Content);
 
                 Assert.Equal(responseStatusCode.ToString(), statusCode);
                 HttpStatusCode StatusCode = response.StatusCode;
