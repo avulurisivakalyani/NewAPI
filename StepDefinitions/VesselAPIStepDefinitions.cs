@@ -29,8 +29,9 @@ namespace GWAPI.StepDefinitions
         public VesselAPIStepDefinitions(Hooks hooks, ITestOutputHelper output)
         {
             var configuration = hooks.BeforeScenario();
-            this.BaseURI = configuration.synergyBaseUrl;
-            this.client = new RestClient(BaseURI);
+            this.BaseURI = configuration.Url;
+            this.client = new RestClient(BaseURI); 
+
             this.Console = output;
         }
        // private List<VesselPostSearch> _responseSearch;
