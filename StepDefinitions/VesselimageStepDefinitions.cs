@@ -27,7 +27,7 @@ namespace GWAPI.StepDefinitions
         public VesselimageStepDefinitions(Hooks hooks, ITestOutputHelper output)
         {
             var configuration = hooks.BeforeScenario();
-            this.BaseURI = configuration.synergyBaseUrl;
+            this.BaseURI = configuration.Url;
             this.client = new RestClient(BaseURI);
             this.Console = output;
         }
@@ -90,7 +90,7 @@ namespace GWAPI.StepDefinitions
             int responseStatusCode = (int)response.StatusCode;
             if (response.IsSuccessful)
             {
-                //var user = JsonConvert.DeserializeObject<VesselimageGet>(response.Content);
+                //var user = JsonConvert.DeserializeObject<Vessel>(response.Content);
                 Assert.Equal(responseStatusCode.ToString(), statusCode);
                 Console.WriteLine(response.Content);
             }
@@ -125,7 +125,7 @@ namespace GWAPI.StepDefinitions
             int responseStatusCode = (int)response.StatusCode;
             if (response.IsSuccessful)
             {
-               // var user = JsonConvert.DeserializeObject<VesselimagePOST>(response.Content);
+               // var user = JsonConvert.DeserializeObject<Vessel>(response.Content);
 
                 Assert.Equal(responseStatusCode.ToString(), statusCode);
                 HttpStatusCode StatusCode = response.StatusCode;
